@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="forsecond.css">
+    <script>
+        function fun1()
+        {
+            var t1= document.getElementById("t1").value
+            if(t1=="")
+        {
+            alert("enter necessary feilds")
+        }
+        else
+        {
+            alert("your subscribtion is active.")
+        }
+        document.getElementById("t1").value=""
+        }
+    </script>
+</head>
+<body>
+    <div class="justify-items-center mt-9">
+        <div class="border-1 border-gray-300 shadow-2xl shadow-blue-500 w-10/12 rounded-l-3xl rounded-r-3xl flex">
+            <div class="w-1/2">
+                <img src="images/goa.jpg" class="rounded-l-3xl h-96 w-full">
+            </div>
+            <div class="w-1/2 text-center justify-items-center">
+              <h1 class="font-medium text-4xl px-24 pt-16">Get special offers, and more from Traveler</h1>
+              <p class="text-gray-500 mt-2 px-40">Subscribe to see secret deals prices drop the moment you sign up!</p>
+              <div class="border-1 border-blue-500 rounded-4xl w-3/5 h-12 mt-16 flex items-center">
+                <div class="w-4/5" ><input type="text" id="t1"  class="mr-16 focus-visible:outline-0  h-full" placeholder="Email Address"></div>
+                <div><a class="rounded-4xl font-bold p-2  bg-blue-600 text-white mr-1" onclick="fun1()" href="#">Subscribe</a></div>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

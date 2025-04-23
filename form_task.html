@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let displayarray = []
+        function fun1()
+        {
+            var name = document.getElementById("name").value
+            var email = document.getElementById("email").value
+            var address = document.getElementById("address").value
+            var contact = document.getElementById("no").value
+
+
+            details = {Name:name,Email:email,Address:address,Contact:contact}
+
+
+            if(name=="" || email=="" || address=="" || contact=="")
+        {
+            alert("plz enter the filed details.")
+        }
+        else if(name==name || email==email || address==address || contact==contact)
+        {
+            alert("details entered successfully")
+            displayarray.push(details);
+            var tbui = displayarray.map((d)=>`<tr><td class="border-2 border-black">${d.Name}</td><td class="border-2 border-black"">${d.Email}</td><td class="border-2 border-black"">${d.Address}</td><td class="border-2 border-black"">${d.Contact}</td></tr>`).join('');
+            document.getElementById("tb1").innerHTML = tbui;
+
+
+            document.getElementById("name").value=""
+            document.getElementById("email").value=""
+            document.getElementById("address").value=""
+            document.getElementById("no").value=""
+        }   
+        }
+        function fun2()
+        {
+            document.getElementById("name").value=""
+            document.getElementById("email").value=""
+            document.getElementById("address").value=""
+            document.getElementById("no").value=""
+        }
+    </script>
+</head>
+<body>
+    <div class="border-2 border-black bg-blue-500 flex flex-col gap-0.5 w-80">
+        <div class="w-full flex justify-between">
+            <div class="w-1/3">Name:</div>
+            <input type="text" id="name" class="w-1/2 bg-white border border-blue-500">
+            </div>
+
+            <div class="w-full flex justify-between">
+                <div class="w-1/3">Email:</div>
+                <input type="text" id="email" class="w-1/2 bg-white border border-blue-500">
+                </div>
+
+                <div class="w-full flex justify-between">
+                    <div class="w-1/3">Address:</div>
+                    <input type="text" id="address" class="w-1/2 bg-white border border-blue-500">
+                    </div>
+
+                    <div class="w-full flex justify-between">
+                        <div class="w-1/3">contact</div>
+                        <input type="text" id="no" class="w-1/2 bg-white border border-blue-500">
+                        </div>
+        <div class="flex ">
+        <input class="bg-green-400 text-white w-1/2" type="button" value="Save" onclick="fun1()">
+        <input class="bg-red-400 text-white w-1/2" type="button" value="cancel" onclick="fun2()">
+        </div>
+        </div>
+    </div>
+    
+
+        <table class="border-2 border-black">
+            <thead>
+                <tr>
+                <th class="border-2 border-black">Name</th>
+                <th class="border-2 border-black">Email</th>
+                <th class="border-2 border-black">Address</th>
+                <th class="border-2 border-black">Contact no</th>
+            </tr>
+        </thead>
+        <tbody id="tb1">
+
+        </tbody>
+
+        </table>
+</body>
+</html>
